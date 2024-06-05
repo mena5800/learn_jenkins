@@ -3,6 +3,10 @@ def gv
 pipeline {
     agent any
 
+    parameters{
+        string(name: "name", defaultValue: "mina", description: "name of owner")
+    }
+
     stages {
         stage('load') {
           steps {

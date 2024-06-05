@@ -1,4 +1,5 @@
 def buildApp() {
-  echo 'building app'
+  echo "building app of ${params.name}"
 }
+
 return this
