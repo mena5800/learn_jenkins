@@ -14,7 +14,12 @@ pipeline {
                 gv = load 'script.groovy'
             }
 
-            echo "branch name is ${env.BRANCH_NAME}"
+            if (env.BRANCH_NAME == "main"){
+              echo "branch name is ${env.BRANCH_NAME}"
+
+            } else {
+              echo "not main branch"
+            }
           }
         }
 
