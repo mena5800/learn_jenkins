@@ -1,5 +1,5 @@
 def buildApp() {
-  echo "building app of ${params.name} ${BRANCH_NAME}"
+  echo "building app of ${params.name}"
 }
 
 return this

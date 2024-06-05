@@ -13,6 +13,8 @@ pipeline {
             script {
                 gv = load 'script.groovy'
             }
+
+            echo "branch name is ${BRANCH_NAME}"
           }
         }
 
