@@ -12,14 +12,11 @@ pipeline {
           steps {
             script {
           gv = load 'script.groovy'
-            }
-
-            step {
-              if (env.BRANCH_NAME == 'main') {
-                echo "branch name is ${env.BRANCH_NAME}"
-              } else {
-                echo 'not main branch'
-              }
+          if (env.BRANCH_NAME == 'main') {
+            echo "branch name is ${env.BRANCH_NAME}"
+                } else {
+            echo 'not main branch'
+          }
             }
           }
         }
