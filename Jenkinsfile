@@ -34,7 +34,7 @@ pipeline {
 
             script {parameterDefinitions
                 gv.buildApp()
-                echo "deploying in ${params.ENV}"
+                echo "deploying in ${ENV}"
             }
           }
         }
