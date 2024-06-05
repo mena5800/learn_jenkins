@@ -3,22 +3,23 @@ def gv
 pipeline {
     agent any
 
-    parameters{
-        string(name: "name", defaultValue: "mina", description: "name of owner")
+    parameters {
+        string(name: 'name', defaultValue: 'mina', description: 'name of owner')
     }
 
     stages {
         stage('load') {
           steps {
             script {
-                gv = load 'script.groovy'
+          gv = load 'script.groovy'
             }
 
-            if (env.BRANCH_NAME == "main"){
-              echo "branch name is ${env.BRANCH_NAME}"
-
-            } else {
-              echo "not main branch"
+            step {
+              if (env.BRANCH_NAME == 'main') {
+                echo "branch name is ${env.BRANCH_NAME}"
+              } else {
+                echo 'not main branch'
+              }
             }
           }
         }
@@ -26,7 +27,7 @@ pipeline {
         stage('build') {
           steps {
             script {
-                gv.buildApp()
+          gv.buildApp()
             }
           }
         }
