@@ -22,7 +22,6 @@ pipeline {
         }
 
         stage('build') {
-          steps {
             input {
               message "select env dev prod"
               ok "Done"
@@ -31,7 +30,9 @@ pipeline {
               }
 
             }
-            script {
+          steps {
+
+            script {parameterDefinitions
                 gv.buildApp()
                 echo "deploying in ${params.ENV}"
             }
