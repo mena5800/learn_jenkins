@@ -14,9 +14,9 @@ pipeline {
                 gv = load 'script.groovy'
             }
 
-            echo "branch name is ${BRANCH_NAME}"
+            echo "branch name is ${env.BRANCH_NAME}"
           }
-        }
+        }BRANCH_NAME
 
         stage('build') {
           steps {
